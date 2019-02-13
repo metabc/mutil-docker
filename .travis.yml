@@ -13,12 +13,12 @@ after_success:
   - docker build -t metabc/multi-nginx ./nginx
   - docker build -t metabc/multi-server ./server
   - docker build -t metabc/multi-worker ./worker
-  
+
   #Log in to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   
   #Take those images and push to Docker hub
-  -docker push metabc/multi-client
-  -docker push metabc/multi-nginx
-  -docker push metabc/multi-server
-  -docker push metabc/multi-worker
+  - docker push metabc/multi-client
+  - docker push metabc/multi-nginx
+  - docker push metabc/multi-server
+  - docker push metabc/multi-worker
